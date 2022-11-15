@@ -20,6 +20,7 @@
 package com.romraider.swing;
 
 import static com.romraider.Settings.COMMA;
+
 import static javax.swing.BorderFactory.createLineBorder;
 
 import java.awt.Color;
@@ -65,6 +66,7 @@ import com.ecm.graphics.data.GraphData;
 import com.ecm.graphics.data.GraphDataListener;
 import com.romraider.Settings;
 import com.romraider.editor.ecu.ECUEditorManager;
+import com.romraider.editor.ecu.Table3DChart;
 import com.romraider.maps.DataCell;
 import com.romraider.maps.Scale;
 import com.romraider.maps.Table;
@@ -682,9 +684,10 @@ public class TableToolBar extends JToolBar implements MouseListener, ItemListene
             if (LOGGER.isDebugEnabled())
                 LOGGER.debug("Scale: " + maxV + COMMA + minV);
             //***********
-
-            Graph3dFrameManager.openGraph3dFrame(graphValues, minV, maxV, xValues, yValues, xLabel, yLabel, zLabel, currentTable.getName());
-            GraphData.addGraphDataListener(this);
+            Table3DChart chart = new Table3DChart();
+            Table3DChart.show();
+//            Graph3dFrameManager.openGraph3dFrame(graphValues, minV, maxV, xValues, yValues, xLabel, yLabel, zLabel, currentTable.getName());
+//            GraphData.addGraphDataListener(this);
         }
     }
 
